@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "cat-breeds:build:production"
+              "buildTarget": "cat-breeds:build:production"
             },
             "development": {
-              "browserTarget": "cat-breeds:build:development"
+              "buildTarget": "cat-breeds:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "cat-breeds:build"
+            "buildTarget": "cat-breeds:build"
           }
         },
         "test": {
@@ -94,5 +94,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
