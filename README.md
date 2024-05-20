@@ -1,27 +1,43 @@
-# CatBreeds
+# CatBreeds App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+Este proyecto fue generado con [Angular CLI](https://angular.io/cli) version 16.2.0 y luego actualizado con la version 17.
 
-## Development server
+![https://upload.wikimedia.org/wikipedia/commons/f/f7/Angular_gradient.png](https://upload.wikimedia.org/wikipedia/commons/f/f7/Angular_gradient.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Pre-requisitos ⚙️
 
-## Code scaffolding
+Para ejecutar el proyecto localmente, se necesitara tener instalo [Node.js](https://nodejs.org/en) y npm (este ultimo se instala automáticamente con node.js)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Se necesita instalar Angular CLI globalmente en la computadora, puede usar el siguiente comando:
 
-## Build
+```bash
+npm install -g @angular/cli
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Luego clonar el siguiente repositorio: [CatBreeds](https://github.com/notami18/cat-breeds.git)
 
-## Running unit tests
+## Ejecución 🚀
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+> _Primero que nada debemos ubicarnos en la ruta de nuestro proyecto, con la terminal._
 
-## Running end-to-end tests
+Ejecutar el comando:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```bash
+npm install
+```
 
-## Further help
+Para que se puedan instalar todas las dependencias.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Luego de haber instalado todas dependencias procedemos a levantar nuestra web con el siguiente comando:
+
+```bash
+ng serve
+```
+
+O
+
+```bash
+ng s -o
+```
+
+Si lo que deseas es que ademas que se ejecute la app, se te abra el navegador auténticamente.
