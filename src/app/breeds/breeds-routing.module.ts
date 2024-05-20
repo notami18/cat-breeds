@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
 import { ListPageComponent } from './pages/list-page/list-page.component';
-import { DetailPageComponent } from './pages/detail-page/detail-page.component';
+import { BreedPageComponent } from './pages/breed-page/breed-page.component';
 
 const routes: Routes = [
   {
@@ -15,8 +15,9 @@ const routes: Routes = [
       },
       {
         path: ':id',
-        component: DetailPageComponent,
+        component: BreedPageComponent,
       },
+      { path: '**', redirectTo: 'list' },
     ],
   },
 ];
