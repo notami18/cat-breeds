@@ -8,6 +8,7 @@ import { FilterComponent } from './components/filter/filter.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { BreedPageComponent } from './pages/breed-page/breed-page.component';
 import { MaterialModule } from '../material/material.module';
+import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { MaterialModule } from '../material/material.module';
     FilterComponent,
     SearchPageComponent,
     BreedPageComponent,
+    LayoutPageComponent,
   ],
   imports: [CommonModule, BreedsRoutingModule, MaterialModule],
 })
