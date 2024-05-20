@@ -1,2 +1,12 @@
-<p>list-page works!</p>
-<router-outlet></router-outlet>
+<h1>Cats</h1>
+<mat-divider></mat-divider>
+
+<div class="grid mb-8 pt-2">
+  <div *ngFor="let breed of breeds" class="col-12 sm:col-4 md:col-3 xl:col-2">
+    <breeds-breed-card [breed]="breed"></breeds-breed-card>
+  </div>
+</div>
+
+<div style="display: flex; justify-content: center; margin-top: 20px;">
+  <button mat-raised-button color="accent" (click)="loadMore()">Ver más</button>
+</div>

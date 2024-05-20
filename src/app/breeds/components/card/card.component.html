@@ -1,1 +1,28 @@
-<p>card works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ breed.name }}</mat-card-title>
+    <mat-card-subtitle>({{ breed.origin }})</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-divider></mat-divider>
+
+  <img mat-card-image [src]="breed.image?.url || 'assets/img/breed_default.png'" [alt]="breed.alt_names">
+
+  <mat-card-content class="mt-2">
+    <p>
+      {{ breed.description }}
+    </p>
+  </mat-card-content>
+
+  <mat-divider></mat-divider>
+
+  <mat-card-actions>
+    <span class="spacer"></span>
+    <button mat-button mat-raised color="accent" [routerLink]="['/breeds', breed.id ]">
+      <mat-icon>more_horiz</mat-icon>
+      Mas
+    </button>
+  </mat-card-actions>
+
+
+</mat-card>
