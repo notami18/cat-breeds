@@ -9,6 +9,7 @@ import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { BreedPageComponent } from './pages/breed-page/breed-page.component';
 import { MaterialModule } from '../material/material.module';
 import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,11 @@ import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
     BreedPageComponent,
     LayoutPageComponent,
   ],
-  imports: [CommonModule, BreedsRoutingModule, MaterialModule],
+  imports: [
+    CommonModule,
+    BreedsRoutingModule,
+    MaterialModule,
+    ReactiveFormsModule,
+  ],
 })
 export class BreedsModule {}

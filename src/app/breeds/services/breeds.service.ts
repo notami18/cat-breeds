@@ -25,4 +25,16 @@ export class BreedsService {
       `${this.baseUrl}/v1/breeds?api_key=${this.apiKey}&limit=${pageSize}&page=${page}`
     );
   }
+
+  /**
+   * @description Retrieves a specific cat breed.
+   *
+   * @param name The ID of the breed to retrieve.
+   * @returns An Observable that emits a Breed object.
+   */
+  getBreed(name: string): Observable<Breed[]> {
+    return this.http.get<Breed[]>(
+      `${this.baseUrl}/v1/breeds/search?q=${name}&api_key=${this.apiKey}`
+    );
+  }
 }
