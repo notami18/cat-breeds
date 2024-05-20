@@ -39,6 +39,12 @@ export class BreedsService {
     );
   }
 
+  /**
+   * @description Retrieves the details of a breed by its ID.
+   *
+   * @param id The ID of the breed to retrieve.
+   * @returns An Observable that emits an array of DetailBreed objects, or undefined if an error occurs.
+   */
   getBreedById(id: string): Observable<DetailBreed[] | undefined> {
     return this.http
       .get<DetailBreed[]>(

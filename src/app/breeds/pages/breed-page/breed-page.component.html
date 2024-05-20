@@ -18,26 +18,29 @@
           ({{ breed.origin }})
         </mat-card-subtitle>
       </mat-card-header>
-      <img mat-card-image [src]="breed.image?.url" [alt]="breed.alt_names">
+      <mat-card>
+        <img class="image-size" [src]="images[currentImageIndex] || 'assets/img/breed_default.png'"
+          alt="Image description">
+        <mat-card-actions>
+          <button color="accent" mat-button (click)="previousImage()">Anterior</button>
+          <button color="accent" mat-button (click)="nextImage()">Siguiente</button>
+        </mat-card-actions>
+      </mat-card>
     </mat-card>
     <mat-card class="col-12 sm:col-6">
 
       <mat-card-header>
         <mat-card-title>Información</mat-card-title>
-        <mat-card-subtitle>{{ breed.name }}</mat-card-subtitle>
+        <mat-card-subtitle>{{ breed.description }}</mat-card-subtitle>
       </mat-card-header>
-
       <mat-card-content>
-        <mat-list>
-          <mat-list-item>{{ breed.child_friendly }}</mat-list-item>
-          <mat-list-item>{{ breed.country_codes }}</mat-list-item>
-          <mat-list-item>{{ breed.grooming }}</mat-list-item>
-          <mat-list-item>{{ breed.intelligence }}</mat-list-item>
-        </mat-list>
-
         <button mat-button color="warn" (click)="goBack()">
           Regresar
         </button>
+
+        <a mat-button color="warn" [href]="breed.wikipedia_url" target="_blank">
+          WIKIPEDIA
+        </a>
       </mat-card-content>
     </mat-card>
   </div>

@@ -7,10 +7,12 @@ import { Breed } from '../../interfaces/breed.interface';
 @Component({
   selector: 'app-breed-page',
   templateUrl: './breed-page.component.html',
+  styleUrl: './breed-page.component.css',
 })
 export class BreedPageComponent implements OnInit {
   public breeds?: Breed[];
   public images: string[] = [];
+  public currentImageIndex = 0;
 
   constructor(
     private breedService: BreedsService,
@@ -28,7 +30,6 @@ export class BreedPageComponent implements OnInit {
           if (b.breeds) this.breeds = b.breeds;
         });
       });
-    console.log(this.images);
   }
 
   /**
@@ -36,5 +37,20 @@ export class BreedPageComponent implements OnInit {
    */
   goBack(): void {
     this.router.navigateByUrl('breeds/list');
+  }
+
+  /**
+   * @description Moves to the next image in the list of images.
+   */
+  nextImage() {
+    this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length;
+  }
+
+  /**
+   * @description Moves to the previous image in the image gallery.
+   */
+  previousImage() {
+    this.currentImageIndex =
+      (this.currentImageIndex - 1 + this.images.length) % this.images.length;
   }
 }
