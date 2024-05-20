@@ -1,1 +1,44 @@
-<p>breed-page works!</p>
+<ng-template #divLoading>
+  <mat-grid-list cols="1">
+    <mat-grid-tile>
+      <mat-spinner></mat-spinner>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+</ng-template>
+
+<div *ngFor="let breed of breeds">
+  <div *ngIf="breed; else divLoading" class="grid p-2">
+    <mat-card class="col-12 sm:col-6">
+      <mat-card-header>
+        <mat-card-title>
+          {{ breed.name }}
+        </mat-card-title>
+        <mat-card-subtitle>
+          ({{ breed.origin }})
+        </mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image [src]="breed.image?.url" [alt]="breed.alt_names">
+    </mat-card>
+    <mat-card class="col-12 sm:col-6">
+
+      <mat-card-header>
+        <mat-card-title>Información</mat-card-title>
+        <mat-card-subtitle>{{ breed.name }}</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item>{{ breed.child_friendly }}</mat-list-item>
+          <mat-list-item>{{ breed.country_codes }}</mat-list-item>
+          <mat-list-item>{{ breed.grooming }}</mat-list-item>
+          <mat-list-item>{{ breed.intelligence }}</mat-list-item>
+        </mat-list>
+
+        <button mat-button color="warn" (click)="goBack()">
+          Regresar
+        </button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

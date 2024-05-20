@@ -14,7 +14,5 @@ export class CardComponent implements OnInit {
     if (!this.breed) {
       throw new Error('Breed is required');
     }
-
-    console.log(this.breed);
   }
 }

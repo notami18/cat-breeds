@@ -1,3 +1,12 @@
+export interface DetailBreed {
+  breeds: Breed[];
+  id: string;
+  url: string;
+  width: number;
+  height: number;
+  categories?: Category[];
+}
+
 export interface Breed {
   weight: Weight;
   id: string;
@@ -49,4 +58,9 @@ export interface Image {
 export interface Weight {
   imperial: string;
   metric: string;
+}
+
+export interface Category {
+  id: number;
+  name: string;
 }

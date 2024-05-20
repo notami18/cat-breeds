@@ -14,6 +14,8 @@ export class ListPageComponent implements OnInit {
   constructor(private breedsService: BreedsService) {}
 
   ngOnInit(): void {
+    // [];
+    // // TODO: Implement the logic to retrieve the list of breeds.
     this.breedsService
       .getBreeds()
       .subscribe((breeds) => (this.breeds = breeds));

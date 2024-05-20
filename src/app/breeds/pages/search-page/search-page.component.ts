@@ -30,8 +30,6 @@ export class SearchPageComponent {
    * @param event The MatAutocompleteSelectedEvent containing the selected option.
    */
   onSelectedOption(event: MatAutocompleteSelectedEvent): void {
-    debugger;
-    console.log(event.option.value);
     if (!event.option.value) {
       this.selectedBreed = undefined;
       return;

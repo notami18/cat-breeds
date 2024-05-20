@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, catchError, of } from 'rxjs';
 import { enviroments } from 'src/enviroments/enviroments';
 import { Breed } from '../interfaces/breed.interface';
+import { DetailBreed } from '../interfaces/breed.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -36,5 +37,17 @@ export class BreedsService {
     return this.http.get<Breed[]>(
       `${this.baseUrl}/v1/breeds/search?q=${name}&api_key=${this.apiKey}`
     );
+  }
+
+  getBreedById(id: string): Observable<DetailBreed[] | undefined> {
+    return this.http
+      .get<DetailBreed[]>(
+        `${this.baseUrl}/v1/images/search?limit=10&attach_image=1&q=${id}&api_key=${this.apiKey}`
+      )
+      .pipe(
+        catchError((err) => {
+          return of(undefined);
+        })
+      );
   }
 }
