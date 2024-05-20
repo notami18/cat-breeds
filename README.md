@@ -4,7 +4,7 @@ Este proyecto fue generado con [Angular CLI](https://angular.io/cli) version 16.
 
 ## Pre-requisitos ⚙️
 
-Para ejecutar el proyecto localmente, se necesitara tener instalo [Node.js](https://nodejs.org/en) y npm (este ultimo se instala automáticamente con node.js)
+Para ejecutar el proyecto localmente, se necesitara tener instalado [Node.js](https://nodejs.org/en) y npm (este ultimo se instala automáticamente con node.js)
 
 Se necesita instalar Angular CLI globalmente en la computadora, puede usar el siguiente comando:
 
@@ -16,7 +16,7 @@ Luego clonar el siguiente repositorio: [CatBreeds](https://github.com/notami18/c
 
 ## Ejecución 🚀
 
-> _Primero que nada debemos ubicarnos en la ruta de nuestro proyecto, con la terminal._
+> _Primero que nada debemos ubicarnos en la ruta de nuestro proyecto en la terminal._
 
 Ejecutar el comando:
 
