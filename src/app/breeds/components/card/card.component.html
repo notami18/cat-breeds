@@ -6,11 +6,12 @@
 
   <mat-divider></mat-divider>
 
-  <img mat-card-image [src]="breed.image?.url || 'assets/img/breed_default.png'" [alt]="breed.alt_names">
+  <img class="image-size" mat-card-image [src]="breed.image?.url || 'assets/img/breed_default.png'"
+    [alt]="breed.alt_names">
 
   <mat-card-content class="mt-2">
     <p>
-      {{ breed.description }}
+      {{ breed.description.substring(0, 100)+'...'}}
     </p>
   </mat-card-content>
 
