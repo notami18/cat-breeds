@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Breed } from '../../interfaces/breed.interface';
 import { BreedsService } from '../../services/breeds.service';
+import { FormControl } from '@angular/forms';
+import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 
 @Component({
   selector: 'app-list-page',
@@ -10,13 +12,19 @@ import { BreedsService } from '../../services/breeds.service';
 export class ListPageComponent implements OnInit {
   public breeds: Breed[] = [];
   public page: number = 1;
+  public filterInput = new FormControl('');
+  public options: Breed[] = [];
 
-  constructor(private breedsService: BreedsService) {}
+  constructor(private breedsService: BreedsService) { }
 
   ngOnInit(): void {
     this.breedsService
       .getBreeds()
       .subscribe((breeds) => (this.breeds = breeds));
+
+    this.breedsService
+      .getAllBreeds()
+      .subscribe((breeds) => (this.options = breeds));
   }
 
   /**
@@ -27,7 +35,25 @@ export class ListPageComponent implements OnInit {
     this.breedsService
       .getBreeds(this.page)
       .subscribe(
-        (breeds: Breed[]) => (this.breeds = [...this.breeds, ...breeds])
+        (breeds) => (this.breeds = [...this.breeds, ...breeds])
       );
+  }
+
+  /**
+   * @description Handles the selection of an option from the autocomplete dropdown.
+   *
+   * @param event - The MatAutocompleteSelectedEvent object containing the selected option.
+   */
+  onSelectedOption(event: MatAutocompleteSelectedEvent): void {
+    if (!event.option.value) {
+      return;
+    }
+
+    const breed: Breed = event.option.value;
+    this.filterInput.setValue(breed.name);
+
+    this.breedsService.getBreed(breed.name).subscribe((breeds) => {
+      this.breeds = breeds;
+    });
   }
 }

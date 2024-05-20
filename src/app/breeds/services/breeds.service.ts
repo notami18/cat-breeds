@@ -28,6 +28,17 @@ export class BreedsService {
   }
 
   /**
+   * @description Retrieves all breeds of cats.
+   *
+   * @returns An Observable that emits an array of Breed objects.
+   */
+  getAllBreeds(): Observable<Breed[]> {
+    return this.http.get<Breed[]>(
+      `${this.baseUrl}/v1/breeds?api_key=${this.apiKey}`
+    );
+  }
+
+  /**
    * @description Retrieves a specific cat breed.
    *
    * @param name The ID of the breed to retrieve.

@@ -2,8 +2,9 @@
 <mat-divider></mat-divider>
 <div class="flex flex-column p-2">
   <mat-form-field color="accent">
-    <mat-label>Buscador de Gatos</mat-label>
-    <input type="text" matInput [formControl]="searchInput" (input)="searchBreed()" [matAutocomplete]="auto" />
+    <mat-label>Buscador de razas</mat-label>
+    <input type="text" matInput [formControl]="searchInput" (input)="searchBreed()" [matAutocomplete]="auto" placeholder="Buscador de razas" />
+    <mat-icon matSuffix>search</mat-icon>
     <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="onSelectedOption($event)">
       <mat-option *ngFor="let breed of breeds" [value]="breed">
         {{ breed.name }}

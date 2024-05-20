@@ -1,5 +1,29 @@
 <h1>Gatos</h1>
 <mat-divider></mat-divider>
+<br />
+<form class="example-form">
+  <mat-form-field class="example-full-width" color="accent">
+    <mat-label>Breeds</mat-label>
+    <input
+      type="text"
+      placeholder="Filtro de Razas"
+      matInput
+      [formControl]="filterInput"
+      [matAutocomplete]="auto"
+    />
+    <mat-icon matSuffix>search</mat-icon>
+    <mat-autocomplete
+      autoActiveFirstOption
+      #auto="matAutocomplete"
+      (optionSelected)="onSelectedOption($event)"
+    >
+     <mat-option *ngFor="let option of options" [value]="option.name">
+      {{ option.name }}
+     </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
+<mat-divider></mat-divider>
 
 <div class="grid mb-8 pt-2">
   <div *ngFor="let breed of breeds" class="col-12 sm:col-4 md:col-3 xl:col-2">
