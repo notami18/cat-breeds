@@ -48,7 +48,7 @@ export class BreedsService {
   getBreedById(id: string): Observable<DetailBreed[] | undefined> {
     return this.http
       .get<DetailBreed[]>(
-        `${this.baseUrl}/v1/images/search?limit=10&attach_image=1&q=${id}&api_key=${this.apiKey}`
+        `${this.baseUrl}/v1/images/search?has_breeds=true&limit=10&attach_image=1&breed_id=${id}&api_key=${this.apiKey}`
       )
       .pipe(
         catchError((err) => {
