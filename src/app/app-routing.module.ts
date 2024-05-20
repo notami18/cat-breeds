@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Error404PageComponent } from './shared/pages/error404-page/error404-page.component';
+import { NotFoundPageComponent } from './shared/pages/not-found-page/not-found-page.component';
 
 const routes: Routes = [
   {
@@ -10,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: '404',
-    component: Error404PageComponent,
+    component: NotFoundPageComponent,
   },
   { path: '', redirectTo: 'breeds', pathMatch: 'full' },
   { path: '**', redirectTo: '404' },

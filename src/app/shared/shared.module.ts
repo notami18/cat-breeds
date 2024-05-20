@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SharedRoutingModule } from './shared-routing.module';
-import { Error404PageComponent } from './pages/error404-page/error404-page.component';
+import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 
 @NgModule({
-  declarations: [Error404PageComponent, Error404PageComponent],
+  declarations: [NotFoundPageComponent],
   imports: [CommonModule, SharedRoutingModule],
-  exports: [Error404PageComponent],
+  exports: [NotFoundPageComponent],
 })
 export class SharedModule {}
