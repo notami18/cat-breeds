@@ -2,8 +2,6 @@
 
 Este proyecto fue generado con [Angular CLI](https://angular.io/cli) version 16.2.0 y luego actualizado con la version 17.
 
-![https://upload.wikimedia.org/wikipedia/commons/f/f7/Angular_gradient.png](https://upload.wikimedia.org/wikipedia/commons/f/f7/Angular_gradient.png)
-
 ## Pre-requisitos ⚙️
 
 Para ejecutar el proyecto localmente, se necesitara tener instalo [Node.js](https://nodejs.org/en) y npm (este ultimo se instala automáticamente con node.js)
