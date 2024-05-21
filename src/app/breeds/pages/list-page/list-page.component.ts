@@ -41,6 +41,11 @@ export class ListPageComponent implements OnInit {
       );
   }
 
+  /**
+   * @description Handles the selection of an option from the autocomplete dropdown.
+   *
+   * @param event - The `MatAutocompleteSelectedEvent` object containing the selected option.
+   */
   onSelectedOption(event: MatAutocompleteSelectedEvent): void {
     if (!event.option.value) {
       return;
