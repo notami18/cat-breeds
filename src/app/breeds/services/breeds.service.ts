@@ -2,8 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, of } from 'rxjs';
 import { enviroments } from 'src/enviroments/enviroments';
-import { Breed } from '../interfaces/breed.interface';
-import { DetailBreed } from '../interfaces/breed.interface';
+import { Breed, DetailBreed } from '../interfaces/breed.interface';
 
 @Injectable({
   providedIn: 'root',
